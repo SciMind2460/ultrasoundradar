@@ -27,4 +27,16 @@ void loop() {
     Serial.print(',');
     Serial.println(distance);
   }
+  for (int angle = 180; angle < 0; angle -= 1) {
+    servo.write(angle);
+    digitalWrite(TRIG_PIN, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TRIG_PIN, HIGH);
+    delayMicroseconds(10);
+    duration = pulseIn(ECHO_PIN, HIGH);
+    distance = (duration * 0.034) / 2
+    Serial.print(angle);
+    Serial.print(',');
+    Serial.println(distance);
+  }
 }
