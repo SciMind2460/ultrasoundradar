@@ -21,9 +21,10 @@ class Radar:
         canvas.create_line(self.range_cm + 10, 10, self.range_cm + 10, 2*self.range_cm + 10, fill="green")
         canvas.create_line(10, self.range_cm + 10, 2*self.range_cm + 10, self.range_cm + 10, fill="green")
         # Draw the radar line.
-        x = self.distance * math.cos(math.radians(self.angle_deg)) + self.range_cm + 10
-        y = self.distance * math.sin(math.radians(self.angle_deg)) + self.range_cm + 10
+        x = self.range_cm * math.cos(math.radians(self.angle_deg)) + self.range_cm + 10
+        y = self.range_cm * math.sin(math.radians(self.angle_deg)) + self.range_cm + 10
         canvas.create_line(self.range_cm + 10, self.range_cm + 10, x, y, fill="red", width=2)
+        canvas.create_oval(self.distance * math.cos(math.radians(self.angle_deg)) + self.range_cm + 5, self.distance * math.sin(math.radians(self.angle_deg)) + self.range_cm + 5, self.distance * math.cos(math.radians(self.angle_deg)) + self.range_cm + 15, self.distance * math.sin(math.radians(self.angle_deg)) + self.range_cm + 15, fill="yellow")
 
 if __name__ == "__main__":
     root = tk.Tk()
