@@ -24,6 +24,7 @@ class Radar:
         x = self.range_cm * math.cos(math.radians(self.angle_deg)) + self.range_cm + 10
         y = self.range_cm * math.sin(math.radians(self.angle_deg)) + self.range_cm + 10
         canvas.create_line(self.range_cm + 10, self.range_cm + 10, x, y, fill="red", width=2)
+        # Draw the detected object.
         canvas.create_oval(self.distance * math.cos(math.radians(self.angle_deg)) + self.range_cm + 5, self.distance * math.sin(math.radians(self.angle_deg)) + self.range_cm + 5, self.distance * math.cos(math.radians(self.angle_deg)) + self.range_cm + 15, self.distance * math.sin(math.radians(self.angle_deg)) + self.range_cm + 15, fill="yellow")
 
 if __name__ == "__main__":
