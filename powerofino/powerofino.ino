@@ -21,7 +21,7 @@ void loop() {
     delayMicroseconds(2);
     digitalWrite(TRIG_PIN, HIGH);
     delayMicroseconds(10);
-    duration = pulseIn(ECHO_PIN, HIGH);
+    duration = pulseIn(ECHO_PIN, HIGH, timeout=10*2/0.034);
     distance = (duration * 0.034) / 2
     Serial.print(angle);
     Serial.print(',');
@@ -33,7 +33,7 @@ void loop() {
     delayMicroseconds(2);
     digitalWrite(TRIG_PIN, HIGH);
     delayMicroseconds(10);
-    duration = pulseIn(ECHO_PIN, HIGH);
+    duration = pulseIn(ECHO_PIN, HIGH, timeout=10*2/0.034);
     distance = (duration * 0.034) / 2
     Serial.print(angle);
     Serial.print(',');
